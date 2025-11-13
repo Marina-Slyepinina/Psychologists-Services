@@ -1,0 +1,70 @@
+@font-face {
+    font-family: "Inter";
+    src: url("./fonts/Inter-VariableFont_opsz\,wght.ttf");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("./fonts/Inter-Italic-VariableFont_opsz\,wght.ttf");
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+:root {
+
+    --font-inter: "Inter", sans-serif;
+
+    --text-dark: #191a15;
+    --text-dark-50: rgba(25, 26, 21, 0.5);
+    --text-dark-30: rgba(25, 26, 21, 0.3);
+
+    --text-white: #fbfbfb;
+    --text-white-50: rgba(251, 251, 251, 0.5);
+
+    --background-lighter: #fbfbfb;
+    --background-light: #f3f3f3;
+    --backdrop: rgba(25, 26, 21, 0.6);
+    
+    --border-color: rgba(25, 26, 21, 0.2);
+
+    --green: #54be96;
+    --green-hover: #36a379;
+    --light-green:rgba(84, 190, 150, 0.2);
+    --green-accent: #38cd3e;
+
+    --blue: #3470ff;
+    --blue-hover: #255ee8;
+    --light-blue: rgba(52, 112, 255, 0.2);
+    
+    --orange: #fc832c;
+    --orange-hover: #f37113;
+    --light-orange: rgba(252, 131, 44, 0.2);
+
+    --star: #ffc531;
+
+    --yellow: #fbc75e;
+    --violet: #4535af;
+}
+
+html,
+body {
+    min-height: 100vh;
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+
+body {
+    color: var(--text-dark);
+    background: var(--background-lighter);
+    font-family: var(--font-inter), sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,54 @@
+.base {
+    min-width: 124px;
+    padding: 14px 40px;
+    border-radius: 30px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    text-align: center;
+}
+
+.transparent {
+    border: 1px solid var(--border-color);
+    color: var(--text-dark);
+}
+
+.filled {
+    color: var(--text-white);
+    background-color: var(--green);
+}
+
+.filled:hover {
+    background-color: var(--green-hover);
+}
+
+.horizontalPaddings-32 {
+    padding-left: 32px;
+    padding-right: 32px;
+}
+
+.horizontalPaddings-39 {
+    padding-left: 39px;
+    padding-right: 39px;
+}
+
+.horizontalPaddings-40 {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.horizontalPaddings-48 {
+    padding-left: 48px;
+    padding-right: 48px;
+}
+
+.horizontalPaddings-50 {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.fullWidth {
+    width: 100%;
+    padding: 14px auto;
+}

@@ -1,0 +1,59 @@
+.header {
+    width: 100%;
+    border-bottom: 1px solid var(--border-color);
+    padding: 24px 0;
+}
+
+.headerContainer {
+    display: flex;
+    align-items: center;
+}
+
+.navigation {
+    display: flex;
+    flex: 1;
+}
+
+.logo {
+    margin-right: 226px;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.accent {
+    color: var(--green);
+}
+
+.navList {
+    display: flex;
+    gap: 40px;
+}
+
+.navItemContainer {
+    position: relative;
+}
+
+.active {
+    display: inline-block;
+    position: relative;
+}
+
+.active::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+   
+    background-color: var(--green);
+}
+
+.btnContainer {
+    display: flex;
+    gap: 8px;
+}

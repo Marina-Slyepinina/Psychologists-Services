@@ -29,8 +29,8 @@ export const Header = () => {
             </ul>
           </nav>
           <div className={css.btnContainer}>
-            <Button handleClick={handleClick} variant="transparent" text="Log In" horizontalPaddings={39} />
-            <Button handleClick={handleClick} variant="filled" text="Registration" horizontalPaddings={40}/>
+            <Button handleClick={handleClick} variant="transparent" horizontalPaddings={39}>Log In</Button> 
+            <Button handleClick={handleClick} variant="filled" horizontalPaddings={40}>Registration</Button>
           </div>
         </div>
       </Container>

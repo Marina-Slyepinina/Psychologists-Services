@@ -1,0 +1,159 @@
+.heroSection {
+    position: relative;
+    padding: 78px 0 100px 0;
+    overflow: hidden;
+}
+
+.circle {
+    position: absolute;
+    right: -38px;
+    bottom: -137px;
+    border-radius: 100%;
+    background-color: var(--green);
+    filter: blur(1000px);
+    width: 469px;
+    height: 469px;
+    border: 1px solid black;
+    z-index: -1;
+}
+
+.heroWrapper {
+    display: flex;
+    gap: 125px;
+}
+
+.heroTextWrapper {
+    width: 595px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 48px;
+    margin-bottom: 40px;
+}
+
+.title {
+    font-weight: 600;
+    font-size: 80px;
+    line-height: 1.025;
+    letter-spacing: -0.02em;
+}
+
+.accent {
+    color: var(--green);
+    font-style: italic;
+}
+
+.text {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.33333;
+    letter-spacing: -0.02em;
+}
+
+.iconArrow {
+    display: inline-block;
+    fill: var(--background-lighter);
+    margin-left: 18px;
+}
+
+.heroImgWrapper {
+    width: 464px;
+    height: 526px;
+    position: relative;
+}
+
+.heroImg {
+    border-radius: 10px;
+}
+
+
+.decorationBlok {
+    background-color: var(--green);
+    border-radius: 20px;
+    width: 311px;
+    padding: 32px;
+    display: flex;
+    gap: 16px;
+
+    position: absolute;
+    bottom: 75px;
+    left: -101px;
+}
+
+.decorationBlokContentWrap {
+    width: 182px;
+}
+
+.decorationText {
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--text-white-50);
+    margin-bottom: 8px;
+}
+
+.decorationNumber {
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--text-white);
+}
+
+
+.decorationBlokSvgWrap{
+    background-color: var(--background-lighter);
+    border-radius: 13px;
+    width: 54px;
+    height: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconCheck {
+    fill: var(--green);
+}
+
+
+.decorationQuestionIcon {
+    border-radius: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: var(--violet);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: rotate(-15deg);
+    position: relative;
+    top: -390px;
+    left: -36px;
+}
+
+.decorationQuestionIcon > .iconWhite {
+    transform: rotate(15deg);
+}
+
+
+.decorationUsersIcon {
+    border-radius: 10px;
+    width: 48px;
+    height: 48px;
+    background-color: var(--yellow);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: rotate(15deg);
+    position: relative;
+    top: -486px;
+    left: 454px;
+}
+
+.decorationUsersIcon > .iconWhite {
+    transform: rotate(-15deg);
+}
+
+.iconWhite {
+    fill: var(--background-lighter);
+}

@@ -21,7 +21,7 @@ export const Hero = () => {
                         </h1>
                         <p className={css.text}>We help you to reveal your potential, overcome challenges and find a guide in your own life with the help of our experienced psychologists.</p>
                     </div>
-                    <Button handleClick={handleClick} variant="filled" horizontalPaddings={50}>
+                    <Button handleClick={handleClick} type="button" variant="filled" horizontalPaddings={50}>
                         Get started
                         <svg width={12} height={12} className={css.iconArrow}>
                             <use href="sprite.svg#arrow-right-top"></use>

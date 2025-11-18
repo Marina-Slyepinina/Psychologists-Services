@@ -37,15 +37,17 @@ export const Modal = ({ children, onClose, title, mainText, contentWidth }: Moda
     
     return createPortal(
         <div className={css.backdrop} onClick={handleBackdrop}>
-            <div className={css.modalWrapper}>
-                <div className={css.contentWrapper} style={{ width: contentWidth }}>
-                    <svg width={32} height={32} className={css.iconClose} onClick={onClose}>
-                        <use href="sprite.svg#close"></use>
-                    </svg>
-                    <h2 className={css.modalTitle}>{title}</h2>
-                    <p className={css.modalText}>{mainText}</p>
+            <div className={css.modal}>
+                <div className={css.modalWrapper} style={{ width: contentWidth }}>
+                    <div>
+                        <svg width={32} height={32} className={css.iconClose} onClick={onClose}>
+                            <use href="sprite.svg#close"></use>
+                        </svg>
+                        <h2 className={css.modalTitle}>{title}</h2>
+                        <p className={css.modalText}>{mainText}</p>
+                    </div>
+                    {children}
                 </div>
-                {children}
             </div>
         </div>,
         document.body

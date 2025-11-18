@@ -12,12 +12,15 @@
     z-index: 999;
 }
 
-.modalWrapper {
+.modal {
     background-color: var(--background-lighter);
     padding: 64px;
     border-radius: 30px;
     position: relative;
+}
 
+.modalWrapper {
+    width: 438px;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -29,10 +32,6 @@
     right: 20px;
     stroke: var(--text-dark);
     cursor: pointer;
-}
-
-.contentWrapper {
-    width: 438px;
 }
 
 .modalTitle {

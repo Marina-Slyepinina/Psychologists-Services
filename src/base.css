@@ -30,6 +30,7 @@
     --backdrop: rgba(25, 26, 21, 0.6);
     
     --border-color: rgba(25, 26, 21, 0.2);
+    --border-color-lighter: rgba(25, 26, 21, 0.1);
 
     --green: #54be96;
     --green-hover: #36a379;

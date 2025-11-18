@@ -1,13 +1,25 @@
-import { Link, NavLink } from "react-router"
+import { Link, NavLink, useLocation, useNavigate } from "react-router"
+import { Container } from "../Container/Container";
 import { Button } from "../Button/Button"
 
 import css from "./Header.module.css";
-import { Container } from "../Container/Container";
 
-const handleClick = () => {
-}
 
 export const Header = () => {
+  
+  const location = useLocation();
+  const navigate = useNavigate();
+  // const backgroundLocation = location.state?.backgroundLocation;
+  // console.log("backgroundLocation ", backgroundLocation);
+  // console.log("location ", location);
+  // console.log("location.pathname ", location.pathname);
+
+  const handleAuthClick = (path: string) => {
+    navigate(path, {
+      state: { backgroundLocation: location }
+    })
+  }
+
   return (
     <header className={css.header}>
       <Container>
@@ -29,8 +41,8 @@ export const Header = () => {
             </ul>
           </nav>
           <div className={css.btnContainer}>
-            <Button handleClick={handleClick} variant="transparent" horizontalPaddings={39}>Log In</Button> 
-            <Button handleClick={handleClick} variant="filled" horizontalPaddings={40}>Registration</Button>
+            <Button type="button" handleClick={() => handleAuthClick("login")} variant="transparent" horizontalPaddings={39}>Log In</Button> 
+            <Button type="button" handleClick={() => handleAuthClick("registration")} variant="filled" horizontalPaddings={40}>Registration</Button>
           </div>
         </div>
       </Container>

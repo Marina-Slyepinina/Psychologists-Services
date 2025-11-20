@@ -5,7 +5,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { Modal } from "../Modal/Modal"
 import { Button } from "../Button/Button";
 import { loginSchema } from "../../schema/schema";
+import { loginUser } from "../../firebase/authApi";
 import css from "./LogInModal.module.css";
+
 
 interface LoginInterface {
   email: string,
@@ -14,6 +16,7 @@ interface LoginInterface {
 
 export const LogInModal = () => {
 
+  const [firebaseError, setFirebaseError] = useState<string | null>(null);
   const [isOpen, setIsOpen] = useState(false)
 
   const navigate = useNavigate();
@@ -28,10 +31,17 @@ export const LogInModal = () => {
     resolver: yupResolver(loginSchema)
   });
 
-  const submitForm = (data: LoginInterface) => {
-    reset();
-    console.log(data);
-    handleClose();
+  const submitForm = async (data: LoginInterface) => {
+    try {
+      setFirebaseError(null);
+      await loginUser(data.email, data.password);
+      reset();
+      handleClose(); 
+
+      navigate("/psychologists");
+    } catch (error) {
+      setFirebaseError((error as Error).message);
+    }
   };
 
   return (
@@ -59,6 +69,8 @@ export const LogInModal = () => {
                 }
               </div>
             </div>
+            
+            {firebaseError && <p className={css.firebaseError}>{firebaseError}</p>}
             
             <Button type="submit" variant="filled" isFullWidth={true}>Log In</Button>
           </form>

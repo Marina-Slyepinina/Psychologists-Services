@@ -42,6 +42,13 @@
     color: rgb(200, 0, 0);
 }
 
+.firebaseError {
+    font-size: 12px;
+    color: rgb(200, 0, 0);
+    font-style: italic;
+    text-align: center;
+}
+
 ::placeholder {
     color: var(--text-dark);
 }

@@ -1,18 +1,17 @@
 import { Link, NavLink, useLocation, useNavigate } from "react-router"
+import { useAuthStore } from "../../store/authStore";
+import { logoutUser } from "../../firebase/authApi";
 import { Container } from "../Container/Container";
 import { Button } from "../Button/Button"
-
 import css from "./Header.module.css";
 
 
 export const Header = () => {
+
+  const { user } = useAuthStore();
   
   const location = useLocation();
   const navigate = useNavigate();
-  // const backgroundLocation = location.state?.backgroundLocation;
-  // console.log("backgroundLocation ", backgroundLocation);
-  // console.log("location ", location);
-  // console.log("location.pathname ", location.pathname);
 
   const handleAuthClick = (path: string) => {
     navigate(path, {
@@ -35,14 +34,30 @@ export const Header = () => {
               <li className={css.navItemContainer}>
                 <NavLink to="/psychologists" className={({ isActive }) => isActive ? css.active : ""}>Psychologists</NavLink>
               </li>
-              <li className={css.navItemContainer}>
+              {user && <li className={css.navItemContainer}>
                 <NavLink to="/favorites" className={({ isActive }) => isActive ? css.active : ""}>Favorites</NavLink>
-              </li>
+              </li>}
             </ul>
           </nav>
           <div className={css.btnContainer}>
-            <Button type="button" handleClick={() => handleAuthClick("login")} variant="transparent" horizontalPaddings={39}>Log In</Button> 
-            <Button type="button" handleClick={() => handleAuthClick("registration")} variant="filled" horizontalPaddings={40}>Registration</Button>
+            {user ? (
+              <>
+                <p className={css.userBadge}>
+                  <p className={css.userAvatar}>
+                    <svg width={24} height={24}  className={css.userIcon}>
+                      <use href="sprite.svg#user"></use>
+                    </svg>
+                  </p>
+                  <p className={css.userName}>{ user.displayName }</p>
+                </p>
+                <Button type="button" handleClick={logoutUser} variant="transparent" horizontalPaddings={39}>Log out</Button>
+              </>
+            ) : (
+            <>
+              <Button type="button" handleClick={() => handleAuthClick("login")} variant="transparent" horizontalPaddings={39}>Log In</Button>
+              <Button type="button" handleClick={() => handleAuthClick("registration")} variant="filled" horizontalPaddings={40}>Registration</Button>
+            </>
+            )}
           </div>
         </div>
       </Container>

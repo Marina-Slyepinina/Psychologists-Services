@@ -1,4 +1,5 @@
 import { LogInModal } from "../components/LogInModal/LogInModal";
+import { ProtectedRoute } from "../components/ProtectedRoute/ProtectedRoute";
 import { RegistrationModal } from "../components/RegistrationModal/RegistrationModal";
 import { Favorites } from "../pages/Favorites";
 import { Home } from "../pages/Home";
@@ -15,7 +16,11 @@ export const routesList = [
     },
     {
         path: "favorites",
-        element: <Favorites />
+        element: (
+            <ProtectedRoute>
+                <Favorites />
+            </ProtectedRoute>
+        )
     },
     {
         path: "login",

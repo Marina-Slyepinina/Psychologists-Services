@@ -27,7 +27,9 @@ export interface Psychologist {
   reviews: Review[];
   price_per_hour: number;
   rating: number;
-  specialisation: string;
+  license: string;
+  specialization: string;
+  initial_consultation: string;
   about: string;
 }
 

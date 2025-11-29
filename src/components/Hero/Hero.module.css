@@ -19,11 +19,13 @@
 
 .heroWrapper {
     display: flex;
-    gap: 125px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 24px;
 }
 
 .heroTextWrapper {
-    width: 595px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -31,11 +33,23 @@
     margin-bottom: 40px;
 }
 
+@media screen and (min-width: 1220px) {
+    .heroTextWrapper {
+        max-width: 595px;
+    }
+}
+
 .title {
     font-weight: 600;
-    font-size: 80px;
+    font-size: 50px;
     line-height: 1.025;
     letter-spacing: -0.02em;
+}
+
+@media screen and (min-width: 768px) {
+    .title {
+        font-size: 80px;
+    }
 }
 
 .accent {
@@ -57,103 +71,120 @@
 }
 
 .heroImgWrapper {
-    width: 464px;
+    width: 100%;
+    max-width: 464px;
     height: 526px;
     position: relative;
+    margin: 0 auto;
+}
+
+@media screen and (min-width: 1220px) {
+    .heroImgWrapper {
+        margin: unset;
+    }
 }
 
 .heroImg {
     border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
 }
 
+@media screen and (max-width: 768px) {
 
-.decorationBlok {
-    background-color: var(--green);
-    border-radius: 20px;
-    width: 311px;
-    padding: 32px;
-    display: flex;
-    gap: 16px;
+    .decorationBlok, .decorationUsersIcon, .decorationQuestionIcon {
+        display: none;
+    }
+}    
 
-    position: absolute;
-    bottom: 75px;
-    left: -101px;
-}
+@media screen and (min-width: 768px) {
 
-.decorationBlokContentWrap {
-    width: 182px;
-}
+    .decorationBlok {
+        background-color: var(--green);
+        border-radius: 20px;
+        max-width: 311px;
+        padding: 32px;
+        display: flex;
+        gap: 16px;
 
-.decorationText {
-    font-weight: 400;
-    font-size: 14px;
-    color: var(--text-white-50);
-    margin-bottom: 8px;
-}
+        position: absolute;
+        bottom: 75px;
+        left: -101px;
+    }
 
-.decorationNumber {
-    font-weight: 700;
-    font-size: 24px;
-    color: var(--text-white);
-}
+    .decorationBlokContentWrap {
+        width: 182px;
+    }
 
+    .decorationText {
+        font-weight: 400;
+        font-size: 14px;
+        color: var(--text-white-50);
+        margin-bottom: 8px;
+    }
 
-.decorationBlokSvgWrap{
-    background-color: var(--background-lighter);
-    border-radius: 13px;
-    width: 54px;
-    height: 54px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    .decorationNumber {
+        font-weight: 700;
+        font-size: 24px;
+        color: var(--text-white);
+    }
 
-.iconCheck {
-    fill: var(--green);
-}
+    .decorationBlokSvgWrap{
+        background-color: var(--background-lighter);
+        border-radius: 13px;
+        width: 54px;
+        height: 54px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
+    .iconCheck {
+        fill: var(--green);
+    }
 
-.decorationQuestionIcon {
-    border-radius: 10px;
-    width: 40px;
-    height: 40px;
-    background-color: var(--violet);
+    .decorationQuestionIcon {
+        border-radius: 10px;
+        width: 40px;
+        height: 40px;
+        background-color: var(--violet);
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-    transform: rotate(-15deg);
-    position: relative;
-    top: -390px;
-    left: -36px;
-}
+        transform: rotate(-15deg);
+        position: relative;
+        top: -390px;
+        left: -36px;
+    }
 
-.decorationQuestionIcon > .iconWhite {
-    transform: rotate(15deg);
-}
+    .decorationQuestionIcon > .iconWhite {
+        transform: rotate(15deg);
+    }
 
+    .decorationUsersIcon {
+        border-radius: 10px;
+        width: 48px;
+        height: 48px;
+        background-color: var(--yellow);
 
-.decorationUsersIcon {
-    border-radius: 10px;
-    width: 48px;
-    height: 48px;
-    background-color: var(--yellow);
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+        transform: rotate(15deg);
+        position: relative;
+        top: -486px;
+        left: 454px;
+    }
 
-    transform: rotate(15deg);
-    position: relative;
-    top: -486px;
-    left: 454px;
-}
+    .decorationUsersIcon > .iconWhite {
+        transform: rotate(-15deg);
+    }
 
-.decorationUsersIcon > .iconWhite {
-    transform: rotate(-15deg);
-}
-
-.iconWhite {
-    fill: var(--background-lighter);
+    .iconWhite {
+        fill: var(--background-lighter);
+    }
 }

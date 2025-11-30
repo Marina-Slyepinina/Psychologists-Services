@@ -10,6 +10,8 @@ import {
   type DocumentData,
   DocumentSnapshot,
   QueryConstraint,
+  doc,
+  getDoc,
 } from "firebase/firestore";
 
 export interface Review {
@@ -40,14 +42,12 @@ export type PriceFilter = "less_than_10" | "greater_than_10" | "all";
 const PAGE_SIZE = 3;
 let lastDoc: DocumentSnapshot<DocumentData> | null = null;
 
-
 export const fetchPsychologists = async (
   reset: boolean = false,
-  sortField: SortField = 'rating', 
-  sortDirection: SortDirection = 'desc',
-  priceFilter: PriceFilter = 'all' 
+  sortField: SortField = "rating",
+  sortDirection: SortDirection = "desc",
+  priceFilter: PriceFilter = "all"
 ) => {
-
   if (reset) {
     lastDoc = null;
   }
@@ -88,4 +88,25 @@ export const fetchPsychologists = async (
     data: psychologists,
     hasMore: !!lastDoc,
   };
-}
+};
+
+export const fetchPsychologistsByIds = async (ids: string[]) => {
+  if (!ids || ids.length === 0) return [];
+
+  try {
+    const docRefs = ids.map(id => doc(db, "psychologists", id));
+    const docSnaps = await Promise.all(docRefs.map(getDoc));
+
+    const psychologists: Psychologist[] = docSnaps
+      .filter(snap => snap.exists())
+      .map(snap => ({
+        id: snap.id,
+        ...(snap.data() as Omit<Psychologist, "id">),
+      }));
+
+    return psychologists;
+  } catch (error) {
+    console.error("Error fetching favorites:", error);
+    return [];
+  }
+};

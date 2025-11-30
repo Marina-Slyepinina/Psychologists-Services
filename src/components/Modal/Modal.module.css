@@ -20,7 +20,7 @@
 }
 
 .modalWrapper {
-    width: 438px;
+    max-width: 438px;
     display: flex;
     flex-direction: column;
     gap: 40px;

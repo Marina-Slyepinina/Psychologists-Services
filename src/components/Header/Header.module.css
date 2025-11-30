@@ -6,29 +6,38 @@
 
 .headerContainer {
     display: flex;
+    flex-direction: column;
+    gap: 32px;
     align-items: center;
+    justify-content: space-between;
 }
 
 .navigation {
     display: flex;
-    flex: 1;
+}
+
+.logoWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
 }
 
 .logo {
-    margin-right: 226px;
     font-weight: 700;
     font-size: 20px;
     line-height: 1.2;
     letter-spacing: -0.02em;
+    list-style: none;
 }
 
 .accent {
-    color: var(--green);
+    color: var(--main-color);
 }
 
 .navList {
     display: flex;
-    gap: 40px;
+    gap: 20px;
 }
 
 .navItemContainer {
@@ -50,7 +59,7 @@
     left: 50%;
     transform: translateX(-50%);
    
-    background-color: var(--green);
+    background-color: var(--main-color);
 }
 
 .btnContainer {
@@ -63,14 +72,13 @@
     display: flex;
     gap: 14px;
     align-items: center;
-    margin-right: 20px;
 }
 
 .userAvatar {
     border-radius: 10px;
     width: 40px;
     height: 40px;
-    background-color: var(--green);
+    background-color: var(--main-color);
 
     display: flex;
     align-items: center;
@@ -88,4 +96,27 @@
     line-height: 1.25;
     letter-spacing: -0.01em;
     color: var(--text-dark);
+}
+
+@media screen and (min-width: 375px) {
+    .logoWrapper {
+        flex-direction: row;
+        gap: 12px;
+        align-items: normal;
+    }
+
+    .navList {
+        display: flex;
+        gap: 40px;
+    }
+
+    .userBadge {
+        margin-right: 20px;
+    }
+}
+
+@media screen and (min-width: 1027px) {
+    .headerContainer {
+        flex-direction: row;
+    }
 }

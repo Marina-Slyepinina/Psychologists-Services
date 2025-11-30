@@ -47,6 +47,10 @@
     --orange-hover: #f37113;
     --light-orange: rgba(252, 131, 44, 0.2);
 
+    --main-color: var(--green);
+    --main-hover: var(--green-hover);
+    --main-bg-light: var(--light-green);
+
     --star: #ffc531;
 
     --yellow: #fbc75e;
@@ -70,4 +74,16 @@ body {
 
     display: flex;
     flex-direction: column;
+}
+
+body.theme-blue {
+  --main-color: var(--blue);
+  --main-hover: var(--blue-hover);
+  --main-bg-light: var(--light-blue);
+}
+
+body.theme-orange {
+  --main-color: var(--orange);
+  --main-hover: var(--orange-hover);
+  --main-bg-light: var(--light-orange);
 }

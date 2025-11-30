@@ -16,11 +16,11 @@
 
 .filled {
     color: var(--text-white);
-    background-color: var(--green);
+    background-color: var(--main-color);
 }
 
 .filled:hover {
-    background-color: var(--green-hover);
+    background-color: var(--main-hover);
 }
 
 .horizontalPaddings-32 {

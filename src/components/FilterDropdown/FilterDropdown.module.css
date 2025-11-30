@@ -20,7 +20,7 @@
     cursor: pointer;
     font-weight: 500;
     color: var(--text-white);
-    background-color: var(--green);
+    background-color: var(--main-color);
 }
 
 .arrowIcon {

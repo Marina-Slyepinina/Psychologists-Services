@@ -1,0 +1,53 @@
+.wrapper {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.title {
+    color: var(--text-dark);
+    font-size: 12px;
+}
+
+.themeSwitcher {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.themeCircle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid transparent; 
+  transition: transform 0.2s ease;
+}
+
+.themeCircle:hover {
+  transform: scale(1.1);
+}
+
+.themeDropdown {
+  position: absolute;
+  top: 100%; 
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 8px; 
+  
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.themeSwitcher:hover .themeDropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}

@@ -1,12 +1,15 @@
 import { AuthProvider } from "./components/AuthProvider/AuthProvider"
+import { ThemeProvider } from "./components/context/ThemeContext.tsx"
 import { AppRouter } from "./routes/AppRouter"
 
 function App() {
 
   return (
-    <AuthProvider>
-      <AppRouter />
-    </AuthProvider>
+    <ThemeProvider>
+      <AuthProvider>
+        <AppRouter />
+      </AuthProvider>
+    </ThemeProvider>
   )
 }
 

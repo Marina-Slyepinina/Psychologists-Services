@@ -11,7 +11,7 @@
 }
 
 .avatarWrapper {
-    border: 2px solid var(--light-green);
+    border: 2px solid var(--main-bg-light);
     border-radius: 30px;
     min-width: 120px;
     height: 120px;
@@ -131,8 +131,8 @@
 }
 
 .isFavorite .heart {
-    fill: var(--green); 
-    stroke: var(--green);
+    fill: var(--main-color); 
+    stroke: var(--main-color);
 }
 
 .characteristicsList {
@@ -197,8 +197,8 @@
     border-radius: 100px;
     font-size: 20px;
     line-height: 1;
-    color: var(--green);
-    background-color: var(--light-green);
+    color: var(--main-color);
+    background-color: var(--main-bg-light);
 }
 
 .reviewerName {

@@ -3,6 +3,7 @@ import { useAuthStore } from "../../store/authStore";
 import { logoutUser } from "../../firebase/authApi";
 import { Container } from "../Container/Container";
 import { Button } from "../Button/Button"
+import ThemeSwitcher from "../ThemeSwitcher/ThemeSwitcher";
 import css from "./Header.module.css";
 
 
@@ -23,11 +24,14 @@ export const Header = () => {
     <header className={css.header}>
       <Container>
         <div className={css.headerContainer}>
+          <div className={css.logoWrapper}>
+            <li className={css.logo}>
+              <Link to="/"><span className={css.accent}>psychologists.</span >services</Link>
+            </li>
+            <ThemeSwitcher />
+          </div>
           <nav className={css.navigation}>
             <ul className={css.navList}>
-              <li className={css.logo}>
-                <Link to="/"><span className={css.accent}>psychologists.</span >services</Link>
-              </li>
               <li className={css.navItemContainer}>
                 <NavLink to="/" className={({ isActive }) => isActive ? css.active : ""}>Home</NavLink>
               </li>
@@ -42,14 +46,14 @@ export const Header = () => {
           <div className={css.btnContainer}>
             {user ? (
               <>
-                <p className={css.userBadge}>
+                <div className={css.userBadge}>
                   <p className={css.userAvatar}>
                     <svg width={24} height={24}  className={css.userIcon}>
                       <use href="sprite.svg#user"></use>
                     </svg>
                   </p>
                   <p className={css.userName}>{ user.displayName }</p>
-                </p>
+                </div>
                 <Button type="button" handleClick={logoutUser} variant="transparent" horizontalPaddings={39}>Log out</Button>
               </>
             ) : (

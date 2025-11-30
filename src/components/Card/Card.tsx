@@ -3,8 +3,8 @@ import { Button } from "../Button/Button";
 import type { Psychologist } from "../../firebase/dataApi";
 import { useAuthStore } from "../../store/authStore";
 import { useFavoritesStore } from "../../store/favoritesStore";
-import { Modal } from "../Modal/Modal";
 import { MakeAppointmentModal } from "../MakeAppointmentModal/makeAppointmentModal";
+import { Modal } from "../Modal/Modal";
 import css from "./Card.module.css";
 
 type CardProps = {

@@ -6,9 +6,9 @@ import { appointmentSchema } from "../../schema/schema";
 import type { Psychologist } from "../../firebase/dataApi";
 import { Modal } from "../Modal/Modal"
 import { Button } from "../Button/Button";
-import css from "./makeAppointmentModal.module.css";
+import css from "./AppointmentModal.module.css";
 
-interface MakeAppointmentModalProps {
+interface AppointmentModalProps {
     onClose: () => void;
     psychologist: Psychologist;
 }
@@ -21,7 +21,7 @@ const meetingTimes = [
     "15 : 00", "15 : 30", "16 : 00", "16 : 30", "17 : 00", "17 : 30"
 ];
 
-export const MakeAppointmentModal = ({ onClose, psychologist }: MakeAppointmentModalProps) => {
+export const AppointmentModal = ({ onClose, psychologist }: AppointmentModalProps) => {
 
     const [isTimeDropdownOpen, setIsTimeDropdownOpen] = useState(false);
 

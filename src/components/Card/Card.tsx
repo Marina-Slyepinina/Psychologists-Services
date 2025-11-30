@@ -3,8 +3,8 @@ import { Button } from "../Button/Button";
 import type { Psychologist } from "../../firebase/dataApi";
 import { useAuthStore } from "../../store/authStore";
 import { useFavoritesStore } from "../../store/favoritesStore";
-import { MakeAppointmentModal } from "../MakeAppointmentModal/makeAppointmentModal";
 import { Modal } from "../Modal/Modal";
+import { AppointmentModal } from "../AppointmentModal/AppointmentModal";
 import css from "./Card.module.css";
 
 type CardProps = {
@@ -126,7 +126,7 @@ export const Card = ({ psychologist }: CardProps) => {
                 </Modal>
             )}
             {isAppointmentModalOpen && (
-                <MakeAppointmentModal onClose={() => setIsAppointmentModalOpen(false)} psychologist={psychologist} />
+                <AppointmentModal onClose={() => setIsAppointmentModalOpen(false)} psychologist={psychologist} />
             )}
         </>
     )

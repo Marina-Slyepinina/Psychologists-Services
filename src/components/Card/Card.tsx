@@ -114,10 +114,10 @@ export const Card = ({ psychologist }: CardProps) => {
             </div>
             {isAuthModalOpen && (
                 <Modal
-                    title="Потрібна автентифікація"
+                    title="Authentication required"
                     onClose={() => setIsAuthModalOpen(false)}
                 >
-                    <p>Для додавання психологів до обраного списку, будь ласка, увійдіть або зареєструйтеся.</p>
+                    <p>To add psychologists to your preferred list, please log in or register.</p>
                     <div>
                         <Button type="button" variant="filled" handleClick={() => setIsAuthModalOpen(false)}>Зрозуміло</Button>
                     </div>

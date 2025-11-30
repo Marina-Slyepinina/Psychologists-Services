@@ -11,13 +11,15 @@ type BtnProps = {
     handleClick?: () => void;
     isFullWidth?: boolean;
     horizontalPaddings?: horizontalPaddingsVariants;
+    className?: string;
+
 }
 
-export const Button = ({ type, handleClick, children, variant, isFullWidth, horizontalPaddings }: BtnProps) => {
+export const Button = ({ type, handleClick, children, variant, isFullWidth, horizontalPaddings, className = "" }: BtnProps) => {
     
     const fullWidthClass = isFullWidth ? css.fullWidth : '';
 
     return (
-        <button onClick={handleClick} type={type} className={`${css.base} ${css[variant]} ${fullWidthClass} ${css[`horizontalPaddings-${horizontalPaddings}`]}`}>{children}</button>
+        <button onClick={handleClick} type={type} className={`${css.base} ${css[variant]} ${className} ${fullWidthClass} ${css[`horizontalPaddings-${horizontalPaddings}`]}`}>{children}</button>
     )
 }

@@ -1,0 +1,156 @@
+.psychologistBlock {
+    display: flex;
+    gap: 14px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    color: var(--text-dark);
+}
+
+.avatarWrapper {
+    width: 44px;
+    height: 44px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.psychologistInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.specialization {
+    font-size: 12px;
+    line-height: 1.33;
+    color: var(--text-gray);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  padding: 16px 18px;
+  border: 1px solid var(--border-color-lighter);
+  border-radius: 12px;
+  font-size: 16px;
+  line-height: 1.25;
+  color: var(--text-dark);
+  outline: none;
+  transition: border-color 0.2s;
+  background-color: transparent;
+}
+
+.input::placeholder {
+  color: var(--text-dark);
+}
+
+.errorInput {
+  border-color: #ef5050;
+}
+
+.errorText {
+  color: #ef5050;
+  font-size: 12px;
+  margin-top: 4px;
+  margin-left: 4px;
+}
+
+.textarea {
+  min-height: 100px;
+  resize: none;
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+    .row {
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .row > .inputWrapper {
+      width: calc(50% - 4px);
+    }
+}
+
+.timeWrapper {
+  position: relative;
+}
+
+.timeInput {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clockIcon {
+  stroke: var(--text-dark);
+  fill: none;
+}
+
+.timeDropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 4px;
+  width: 151px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 20px 69px 0px rgba(0, 0, 0, 0.07);
+  padding: 16px;
+  z-index: 100;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.timeDropdownTitle {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.timeList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.timeItem {
+  padding: 6px 12px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 16px;
+  color: var(--text-dark-30);
+  transition: color 0.2s, font-weight 0.2s;
+}
+
+.timeItem:hover {
+  color: var(--text-dark);
+}
+
+.activeTime {
+  color: var(--text-dark);
+  font-weight: 500;
+}

@@ -4,6 +4,7 @@ import type { Psychologist } from "../../firebase/dataApi";
 import { useAuthStore } from "../../store/authStore";
 import { useFavoritesStore } from "../../store/favoritesStore";
 import { Modal } from "../Modal/Modal";
+import { MakeAppointmentModal } from "../MakeAppointmentModal/makeAppointmentModal";
 import css from "./Card.module.css";
 
 type CardProps = {
@@ -13,6 +14,7 @@ type CardProps = {
 export const Card = ({ psychologist }: CardProps) => {
     const [isOpen, setIsOpen] = useState(false);
     const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+    const [isAppointmentModalOpen, setIsAppointmentModalOpen] = useState(false);
     const psychologistId = psychologist.id; 
 
     const favoriteIds = useFavoritesStore(state => state.favoriteIds);
@@ -106,7 +108,7 @@ export const Card = ({ psychologist }: CardProps) => {
                                         </div>
                                     ))}
                                 </div>
-                                <Button type="button" variant="filled" horizontalPaddings={32}>Make an appointment</Button>
+                                <Button type="button" variant="filled" horizontalPaddings={32} handleClick={() => setIsAppointmentModalOpen(true)}>Make an appointment</Button>
                             </>
                         )
                     }
@@ -119,9 +121,12 @@ export const Card = ({ psychologist }: CardProps) => {
                 >
                     <p>To add psychologists to your preferred list, please log in or register.</p>
                     <div>
-                        <Button type="button" variant="filled" handleClick={() => setIsAuthModalOpen(false)}>Зрозуміло</Button>
+                        <Button type="button" variant="filled" handleClick={() => setIsAuthModalOpen(false)}>Close</Button>
                     </div>
                 </Modal>
+            )}
+            {isAppointmentModalOpen && (
+                <MakeAppointmentModal onClose={() => setIsAppointmentModalOpen(false)} psychologist={psychologist} />
             )}
         </>
     )

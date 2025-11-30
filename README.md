@@ -1,73 +1,52 @@
-# React + TypeScript + Vite
+# Платформа Психологічних Послуг **Psychologists Services**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Psychologists Services** — це сучасний вебзастосунок, розроблений для компанії, яка надає послуги професійних психологів.  
+Основна мета проєкту — забезпечити користувачам зручний та інтуїтивно зрозумілий інтерфейс для пошуку, сортування та вибору фахівців, а також для керування власним списком обраних психологів.
 
-Currently, two official plugins are available:
+Застосунок орієнтований на високу взаємодію з користувачем (UX) та реалізує функціонал автентифікації для персоналізованих можливостей.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🧩 Основні Технології та Архітектура
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Проєкт реалізований на сучасному стеку **React** і використовує спеціалізовані бібліотеки:
 
-## Expanding the ESLint configuration
+- **React Router** — навігація  
+- **Zustand** — керування станом  
+- **Styled Components** — стилізація  
+- **react-hook-form + yup** — валідація форм  
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🗺 Структура та Маршрутизація
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Застосунок має 3 основні сторінки:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### **1. Home Page (/)**  
+Вітальна сторінка з брендуванням, слоганом та кнопкою переходу до каталогу психологів (`/psychologists`).
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### **2. Psychologists Page (/psychologists)**  
+Головний каталог фахівців: пошук, сортування, фільтри та перегляд кожного психолога.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### **3. Favorites Page (/favorites)**  
+Приватна сторінка, доступна лише для авторизованих користувачів. Містить список обраних психологів.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## 🎨 Стилізація та Дизайн
+
+- Використання **Styled Components** забезпечує модульність та гнучкість стилів.  
+- Доступна персоналізація інтерфейсу — вибір провідної кольорової палітри.  
+- Дизайн адаптивний і відповідає сучасним UI-практикам.
+
+---
+
+## 📄 Технічне Завдання
+
+[Переглянути ТЗ](https://docs.google.com/document/d/1PrTxBn6HQbb0Oz17g5_zvyLGIOZg0TIP3HPaEEp6ZLs/edit?tab=t.0)
+
+---
+
+## 🎨 Макет у Figma
+
+[Макет Psychologists Services](https://www.figma.com/file/I5vjNb0NsJOpQRnRpMloSY/Psychologists.Services?type=design&node-id=0-1&mode=design&t=4zfT2zFANRbp1fCK-0)
